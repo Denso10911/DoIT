@@ -1,0 +1,13 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;  
+}
+
+
+
+.todoText {
+  width: 60%;
+  text-align: left;
+  
+}
