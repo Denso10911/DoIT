@@ -12,3 +12,8 @@ body {
   margin: 50px auto 0;
   border-radius: 10px;
   background-color: #67979f;
+}
+
+input {
+  padding: 0;
+}

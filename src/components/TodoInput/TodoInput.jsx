@@ -6,13 +6,9 @@ export default function TodoInput ({setTextTodo, textTodo, setTodoItems, todoIte
   let onAddNewItem = (textTodo) => {
     if (!!textTodo) {
       setTodoItems([...todoItems, {
-              id: 2,
-              text: textTodo,
-              editMode: false,
-              del: false,
               done: false,
-              priority: 'green',
-
+              id: Date.now(),
+              text: textTodo,
           } ]) 
           setTextTodo('')
     }

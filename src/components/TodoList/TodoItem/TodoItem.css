@@ -7,6 +7,7 @@
   padding: 15px;
   box-sizing: border-box;
   margin-bottom: 10px;
+  position: relative;
 }
 
 .todoItem button {
@@ -15,20 +16,10 @@
 
 }
 
-.todoCheck {
-  border-radius: 50%;
-  transition: all 0.5s ease;
-  height: 20px;
-  width: 20px;
-}
 
-.todoCheck:hover {
-  background-color: #1c3431;
-  border-radius: 10%;
-}
 
-.todoText {
-  width: 60%;
+.todoText, .todoEdit {
+  width: 70%;
   text-align: left;  
 }
 
@@ -38,5 +29,76 @@
 }
 
 .todoText.done {
-  color: red;
+  opacity: 0.5;
+  text-decoration: line-through;
+  font-style: italic;
+}
+
+.todoEdit input {
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+
+.todoIcons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
+
+.todoIcons > div {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+}
+
+.todoIcons > div > button {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.todoIcons > div > button > svg {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    transition: all 0.5s ease;
+} 
+
+.todoIcons > div:hover {
+  background-color: #1c3431;
+  border-radius: 8px;
+}
+
+.todoIcons > div:hover svg {
+  color: #67979f;
+}
+
+.todoPriority__container{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 3px;
+  padding: 3px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  right: -120px;
+  
+}
+
+.todoPriority__container > span {
+  width: 30px;
+  height: 20px;
+  border-radius: 5px;
+
 }

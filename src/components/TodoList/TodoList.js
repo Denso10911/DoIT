@@ -5,7 +5,6 @@ import './TodoList.css'
 export default function TodoList ({todoItems, setTodoItems}) {
 
 
-
   const onItemDelete = (itemId) => {
     setTodoItems([...todoItems].filter(e => (e.id !== itemId) ))
   }
@@ -28,7 +27,8 @@ export default function TodoList ({todoItems, setTodoItems}) {
             item={item} 
             onItemDelete={onItemDelete}
             onTextChange={onTextChange}
-            onTaskDone={onTaskDone}/>
+            onTaskDone={onTaskDone}
+            />
             })
           }          
         </ul>
