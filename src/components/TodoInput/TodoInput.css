@@ -1,0 +1,36 @@
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+.todo__add {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+  padding: 30px;
+  gap: 20px;
+}
+
+.todo__input {
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  background-color: white;
+}
+
+.todo__input:focus-visible {
+  outline: none;
+}
+
+.todo__button {
+  border-radius: 10px;
+  border: none;
+  background-color: #607d8b;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.todo__button:hover{
+  opacity: 0.8;
+}

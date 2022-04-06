@@ -9,8 +9,7 @@ export default function App() {
     {
       id: 1,
       text:'hi',
-      done: false,
-      priority: 'red',
+      done: false
     }
   ])
 

@@ -1,13 +1,42 @@
 .todoItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;  
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #009688;
+  padding: 15px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
+.todoItem button {
+  background-color: inherit;
+  border: none;
 
+}
+
+.todoCheck {
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  height: 20px;
+  width: 20px;
+}
+
+.todoCheck:hover {
+  background-color: #1c3431;
+  border-radius: 10%;
+}
 
 .todoText {
   width: 60%;
-  text-align: left;
+  text-align: left;  
+}
+
+.todoText p {
+  margin: 0;
   
+}
+
+.todoText.done {
+  color: red;
 }
