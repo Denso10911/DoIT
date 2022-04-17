@@ -9,6 +9,7 @@ export default function TodoInput ({setTextTodo, textTodo, setTodoItems, todoIte
               done: false,
               id: Date.now(),
               text: textTodo,
+              color: 'rgb(0, 150, 136)',
           } ]) 
           setTextTodo('')
     }

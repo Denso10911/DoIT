@@ -28,7 +28,9 @@ export default function TodoIconsPriority (props) {
                 <div className='todoPriority__container'>
                  {colors.map((e, index)=>{
                   return <TodoIconsPrioritySpan 
+                    id={props.id}
                     color={e} 
+                    onColorChange={props.onColorChange}
                     setBgColor={props.setBgColor} 
                     setEditMode={setEditMode}
                     key={index}/>

@@ -1,5 +1,5 @@
 import "./styles.css";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import TodoList from './components/TodoList/TodoList' 
 import TodoInput from './components/TodoInput/TodoInput' 
 
@@ -9,15 +9,24 @@ export default function App() {
     {
       id: 1,
       text:'hi',
-      done: false
+      done: false,
+      color: 'rgb(0, 150, 136)'
     }
   ])
 
   let [textTodo, setTextTodo] = useState('')
 
+
+  let [appHeight, setAppHeight] = useState(100)
+
+  useEffect(()=> {
+    let list = document.getElementById('list')
+    setAppHeight(100 + list.clientHeight)
+  },[todoItems])
+
+
   return (
-    <div className="App">
-      
+    <div className="App" style={{maxHeight:`${appHeight}px`, minHeight:`${appHeight}px`}}>       
         <TodoInput 
           setTextTodo={setTextTodo}
           textTodo={textTodo}

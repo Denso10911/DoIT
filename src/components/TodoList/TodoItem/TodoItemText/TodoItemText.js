@@ -1,3 +1,5 @@
+import './TodoItemText.css'
+
 export default function TodoItemText ({item, editMode, itemText, setItemText}) {
 
   

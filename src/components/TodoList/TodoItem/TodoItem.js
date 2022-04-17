@@ -5,18 +5,26 @@ import TodoIconsEdit from './TodoIcons/TodoIconsEdit'
 import TodoIconsPriority from './TodoIcons/TodoIconsPriority'
 import './TodoItem.css'
 import { FiTrash } from "react-icons/fi"
+import { slideInLeft } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 
 export default function TodoItem (props) {
 
   let [itemText, setItemText] = useState(props.item.text)  
   let [editMode, setEditMode] = useState(false)
-  let [bgColor, setBgColor] = useState('67979f')
-
+  const styles = {
+  slideInLeft: {
+    animation: 'x 1s',
+    animationName: Radium.keyframes(slideInLeft, 'slideInLeft')
+  }
+}
  
   return (
     <>      
-      <li className='todoItem' style={{backgroundColor:`${bgColor}`}}>
-        <TodoItemText 
+     <StyleRoot>
+     <li style={styles.slideInLeft}>
+      <div className='todoItem' style={{backgroundColor:`${props.item.color}`}}>
+      <TodoItemText 
           item={props.item} 
           editMode={editMode} 
           itemText={itemText}
@@ -40,9 +48,12 @@ export default function TodoItem (props) {
             id={props.item.id}
             />
           
-          <TodoIconsPriority setBgColor={setBgColor}/>
-        </div>      
-      </li>        
+          <TodoIconsPriority  id={props.item.id} onColorChange={props.onColorChange}/>
+        </div>  
+      </div>
+     </li>
+         
+       </StyleRoot>  
     </>
   )
 }

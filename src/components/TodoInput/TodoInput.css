@@ -10,6 +10,7 @@ select {
   grid-template-columns: 6fr 2fr;
   padding: 30px;
   gap: 20px;
+  height: 40px;
 }
 
 .todo__input {
