@@ -1,8 +1,13 @@
 body {
+  margin: 0;
+  padding: 50px 0 0 0 ;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 100vh;  
   background: rgb(148,216,227);
   background: linear-gradient(219deg, rgba(148,216,227,1) 0%, rgba(181,228,236,1) 76%, rgba(255,255,255,1) 100%);
-  height: 100vh;
-}
+  background-size: cover;
+  }
 
 li {
   list-style-type: none;
@@ -13,7 +18,7 @@ li {
   text-align: center;
   box-sizing: border-box;
   width: 80%;
-  margin: 50px auto 0;
+  margin: 0 auto 50px;  
   border-radius: 10px;
   background-color: #67979f;
   transition: all 0.5s ease;
@@ -21,4 +26,11 @@ li {
 
 input {
   padding: 0;
+}
+
+@media screen and (max-device-width : 500px), screen and (max-width: 500px) {
+  .App {
+    width: 90%;
+    padding: 20px 20px;
+  }
 }

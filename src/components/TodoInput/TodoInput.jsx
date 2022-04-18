@@ -1,5 +1,6 @@
 
 import './TodoInput.css'
+import { FcTodoList } from 'react-icons/fc'
 
 export default function TodoInput ({setTextTodo, textTodo, setTodoItems, todoItems}){
 
@@ -28,7 +29,11 @@ export default function TodoInput ({setTextTodo, textTodo, setTodoItems, todoIte
          <button 
           onClick={()=>{onAddNewItem(textTodo)}}
           className='todo__button'         
-         > Add </button> 
+         >Add</button> 
+         <button 
+          onClick={()=>{onAddNewItem(textTodo)}}
+          className='todo__button media'         
+         ><FcTodoList/></button>         
       </div>
     </>
   )

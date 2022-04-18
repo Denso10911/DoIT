@@ -13,7 +13,7 @@ select {
   height: 40px;
 }
 
-.todo__input {
+.todo__input {  
   border-radius: 10px;
   padding: 10px;
   border: none;
@@ -32,6 +32,44 @@ input:focus-visible {
   transition: all 0.5s ease;
 }
 
+
+.todo__button.media {
+  display: none
+}
+
 .todo__button:hover{
   opacity: 0.8;
 }
+
+@media screen and (max-device-width : 500px), screen and (max-width: 500px) {
+  .todo__add{
+    border-radius: 10px;
+    background-color: white;
+    padding: 5px; 
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    margin-bottom: 30px;  
+    
+  }
+  .todo__input{
+    display: block; 
+    width: calc(100% - 50px) ;
+  }
+  .todo__button {
+    width: 40px;  
+    height: 40px;
+    border-radius: 10px;
+    display: none
+  } 
+
+.todo__button.media {
+  display: block;  
+  background-color: white;
+}
+
+.todo__button.media  svg {
+  width: 30px;  
+    height: 30px;
+}
+  }
