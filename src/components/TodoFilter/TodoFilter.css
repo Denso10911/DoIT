@@ -1,0 +1,21 @@
+.todoFilterParams {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  height: 50px;
+}
+
+.todoFilterParamBtn {
+  background-color: inherit;
+  margin: 0 10px;
+  border: none;
+  color: lightgrey;
+  border-bottom: 1px solid lightgrey;
+  transition: color 0.3s ease;
+}
+
+.todoFilterParamBtn.active {
+  color: white;
+  border-bottom: 2px solid white;
+}
