@@ -3,13 +3,16 @@
   margin: 0 auto;
   padding: 0;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
 
-@media screen and (max-device-width : 500px), screen and (max-width: 500px) {
-  .todoList{
-   width: 90%;  
-    
+.todoList__noTask {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-device-width: 500px), screen and (max-width: 500px) {
+  .todoList {
+    width: 90%;
   }
- 
-  }
+}

@@ -8,6 +8,7 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "framer-motion": "6.3.3",
     "radium": "0.26.2",
     "react": "18.0.0",
     "react-animations": "1.0.0",

@@ -5,21 +5,10 @@ import TodoFilter from "./components/TodoFilter/TodoFilter";
 import TodoInput from "./components/TodoInput/TodoInput";
 
 export default function App() {
-  let [todoItems, setTodoItems] = useState([
-    {
-      id: 1,
-      text: "hi",
-      done: true,
-      color: "rgb(0, 150, 136)"
-    }
-  ]);
-
+  let [todoItems, setTodoItems] = useState([]);
   let [textTodo, setTextTodo] = useState("");
   let [appHeight, setAppHeight] = useState(100);
-
   let [filterParam, setFilterPatam] = useState("All");
-  console.log(todoItems.done);
-
   let fiterTodoItems = todoItems.filter((item) => {
     switch (filterParam) {
       case "Active":
@@ -30,8 +19,6 @@ export default function App() {
         return item;
     }
   });
-
-  console.log(fiterTodoItems);
 
   useEffect(() => {
     let list = document.getElementById("list");
@@ -50,7 +37,13 @@ export default function App() {
         todoItems={todoItems}
       />
       <TodoFilter filterParam={filterParam} setFilterPatam={setFilterPatam} />
-      <TodoList todoItems={fiterTodoItems} setTodoItems={setTodoItems} />
+
+      <TodoList
+        todoItems={todoItems}
+        fiterTodoItems={fiterTodoItems}
+        setTodoItems={setTodoItems}
+        filterParam={filterParam}
+      />
     </div>
   );
 }

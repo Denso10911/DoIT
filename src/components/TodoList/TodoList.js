@@ -1,8 +1,14 @@
-import { useState } from "react";
 import TodoItem from "./TodoItem/TodoItem";
+import { motion } from "framer-motion";
+
 import "./TodoList.css";
 
-export default function TodoList({ todoItems, setTodoItems }) {
+export default function TodoList({
+  todoItems,
+  fiterTodoItems,
+  setTodoItems,
+  filterParam
+}) {
   const onItemDelete = (itemId) => {
     setTodoItems([...todoItems].filter((e) => e.id !== itemId));
   };
@@ -29,21 +35,71 @@ export default function TodoList({ todoItems, setTodoItems }) {
     );
   };
 
-  return (
-    <>
+  const containerVariants = {
+    hidden: {
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.5
+      }
+    }
+  };
+
+  const childVariants = {
+    hidden: {
+      x: -150,
+      opacity: 0
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring"
+      }
+    }
+  };
+
+  if (fiterTodoItems.length === 0) {
+    return (
       <ul className="todoList" id="list">
-        {todoItems.map((item) => {
+        <div className="todoList__noTask">
+          {todoItems.length === 0 ? (
+            <p>
+              You don't have any tasks. <br />
+              Maybe you want to do something ?
+            </p>
+          ) : (
+            <p> You don't have any {filterParam.toLowerCase()} tasks </p>
+          )}
+        </div>
+      </ul>
+    );
+  } else {
+    return (
+      <motion.ul
+        className="todoList"
+        id="list"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {fiterTodoItems.map((item, index) => {
           return (
-            <TodoItem
-              item={item}
-              onItemDelete={onItemDelete}
-              onTextChange={onTextChange}
-              onTaskDone={onTaskDone}
-              onColorChange={onColorChange}
-            />
+            <motion.div key={index} variants={childVariants}>
+              <TodoItem
+                item={item}
+                onItemDelete={onItemDelete}
+                onTextChange={onTextChange}
+                onTaskDone={onTaskDone}
+                onColorChange={onColorChange}
+              />
+            </motion.div>
           );
         })}
-      </ul>
-    </>
-  );
+      </motion.ul>
+    );
+  }
 }

@@ -29,7 +29,6 @@ input:focus-visible {
   border: none;
   background-color: #607d8b;
   color: white;
-  transition: all 0.5s ease;
 }
 
 .todo__button.media {
