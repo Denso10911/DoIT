@@ -25,6 +25,15 @@ export default function App() {
     setAppHeight(150 + list.clientHeight);
   }, [todoItems, fiterTodoItems]);
 
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem('todoItems') || '[]' )
+    setTodoItems(saved)
+  }, [])
+
+  useEffect(() => {
+   localStorage.setItem('todoItems', JSON.stringify(todoItems))
+  }, [todoItems])
+
   return (
     <div
       className="App"
